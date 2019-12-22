@@ -64,19 +64,17 @@ main()
 ### 3.3. Создание скрипта для считывания данных справочных логов из текстового файла и преобразования их в CSV-формат с последующей записью в новый файл. Формирование отчета по выполнению задания и размещение его в портфолио, персональном репозитории. 
 ```python
 import json
-def main():
-    with open('MOCK_DATA.json', 'r', encoding='utf-8') as f: #открываем файл на чтение
-        data = json.load(f)
+with open('MOCK_DATA.json', 'r', encoding='utf-8') as f: #открываем файл на чтение
+     data = json.load(f)
 #print(data)
 
 import csv
-def csvwriter(data = []):
-    with open('answer.csv', 'w', newline='') as csvfile:
-        fieldnames = ['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in data:
-            writer.writerow(row)
+with open('answer.csv', 'w', newline='') as csvfile:
+    fieldnames = ['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    for row in data:
+        writer.writerow(row)
 main()
 ```
 ### 3.4. Реализовать программу шифрующую строку, задаваемую пользователем, с помощью алгоритма шифрования ROT13. Формирование отчета по выполнению задания и размещение его в портфолио, персональном репозитории.
